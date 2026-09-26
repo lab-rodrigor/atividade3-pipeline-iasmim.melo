@@ -30,9 +30,9 @@ jobs:
         run: |
           # TODO: apague os três containers, se existirem.
           # Dica: o passo não pode falhar quando eles ainda não existem.
-          ssh -i ~/.ssh/deploy gr-${{ env.SLUG }}@gr.lab.ayty.org gr-docker rm -f front || true
-          ssh -i ~/.ssh/deploy gr-${{ env.SLUG }}@gr.lab.ayty.org gr-docker rm -f api || true
-          ssh -i ~/.ssh/deploy gr-${{ env.SLUG }}@gr.lab.ayty.org gr-docker rm -f banco || true
+          ssh -i ~/.ssh/deploy gr-${{ env.SLUG }}@gr.lab.ayty.org gr-docker rm -f gr-${{ env.SLUG }}-front || true
+          ssh -i ~/.ssh/deploy gr-${{ env.SLUG }}@gr.lab.ayty.org gr-docker rm -f gr-${{ env.SLUG }}-api || true
+          ssh -i ~/.ssh/deploy gr-${{ env.SLUG }}@gr.lab.ayty.org gr-docker rm -f gr-${{ env.SLUG }}-banco || true
 
       - name: Criar rede e volume
         run: |
